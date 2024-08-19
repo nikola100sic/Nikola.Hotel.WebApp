@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button, Col, FormCheck, FormControl, FormLabel, FormSelect, Row, Card } from 'react-bootstrap';
 import hotelAxios from "../../apis/HotelAxios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
+import { jwtDecode } from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
 export const Rooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -11,6 +15,9 @@ export const Rooms = () => {
     const [showSearch, setShowSearch] = useState(false);
     const [selectedCapacity, setSelectedCapacity] = useState("");
     const [sortCriteria, setSortCriteria] = useState("price-asc");
+
+    const navigate = useNavigate();
+
 
     const getRooms = () => {
         hotelAxios.get(`/rooms?pageNo=${pageNo}`, {
@@ -77,10 +84,28 @@ export const Rooms = () => {
     const handleSortChange = (e) => {
         setSortCriteria(e.target.value);
     };
-    
+
     useEffect(() => {
         document.title = "Rooms- Hotel Nicola's"; // Postavlja naslov kada se komponenta montira
     }, []);
+
+    const extractInfoFromTokenAdmin = () => {
+        const token = localStorage.getItem("jwt")
+        const decoded = jwtDecode(token)
+        console.log(decoded.role.authority)
+
+        if (decoded.role.authority === "ADMIN") {
+            return true
+        }
+        return false;
+    }
+
+    const isLoggedIn = !!localStorage.getItem("jwt");
+    const isAdmin = isLoggedIn ? extractInfoFromTokenAdmin() : false;
+
+    const roomReservations = (roomId) => {
+        navigate("/rooms/" + roomId + "/reservations")
+    };
 
     return (
         <div className="containerImage">
@@ -122,7 +147,7 @@ export const Rooms = () => {
                     </Row>
                 )}
                 <Row className="mt-4 d-flex justify-content-end align-items-center">
-                    <Col xs="auto" className="d-flex align-items-center"> 
+                    <Col xs="auto" className="d-flex align-items-center">
                         Sort by:<FormSelect value={sortCriteria} onChange={handleSortChange} className="small-dropdown">
                             <option value="price-asc">Price: Low to High</option>
                             <option value="price-desc">Price: High to Low</option>
@@ -143,6 +168,7 @@ export const Rooms = () => {
                                         <br />
                                         <strong>Price per night:</strong> {room.price} €
                                     </Card.Text>
+                                    {isAdmin ? <Button onClick={() => roomReservations(room.id)}> <FontAwesomeIcon icon={faFile} /> Report</Button> : ""}
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -150,7 +176,7 @@ export const Rooms = () => {
                 </Row>
                 {rooms.length !== 0 && (
                     <div className="page mt-4">
-                        <Button onClick={() => setPageNo(pageNo - 1)} disabled={pageNo === 0}> Previous</Button>
+                        <Button style={{ marginRight: '10px' }} onClick={() => setPageNo(pageNo - 1)} disabled={pageNo === 0}> Previous</Button>
                         <Button onClick={() => setPageNo(pageNo + 1)} disabled={pageNo === pageCount - 1}>Next</Button>
                     </div>
                 )}

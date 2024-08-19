@@ -14,6 +14,7 @@ import { Contact } from './components/Contact/Contact';
 import { Photo } from './components/Photo/Photo';
 import { jwtDecode } from 'jwt-decode';
 import MyReservationsPage from './components/Reservation/MyReservationPage';
+import { RoomReservations } from './components/Rooms/RoomReservations';
 
 const getUsernameFromToken = () => {
     const token = window.localStorage.getItem("jwt");
@@ -36,7 +37,7 @@ const App = function () {
         return (
             <div>
                 <Router>
-                    <Navbar collapseOnSelect expand="sm"  bg="dark" variant="dark" className="sticky-top">
+                    <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark" className="sticky-top">
                         <Navbar.Brand as={Link} to="/">
                             <Logo />
                             Nicola's hotel
@@ -44,17 +45,17 @@ const App = function () {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto"  >
-                                <Nav.Link as={Link} to="rooms" style={{ color: 'white', fontFamily:'sans-serif' }}> Rooms </Nav.Link>
-                                <Nav.Link as={Link} to="reservations"style={{ color: 'white', fontFamily:'sans-serif' }}> Reservations </Nav.Link>
+                                <Nav.Link as={Link} to="rooms" style={{ color: 'white', fontFamily: 'sans-serif' }}> Rooms </Nav.Link>
+                                <Nav.Link as={Link} to="reservations" style={{ color: 'white', fontFamily: 'sans-serif' }}> Reservations </Nav.Link>
 
                             </Nav>
                             <Nav className="ms-auto">
-                                <div style={{ display: 'flex', alignItems: 'center', fontFamily:'revert-layer'}}>
-                                    <Nav.Link as={Link} to="/info" style={{ color: 'white', fontFamily:'sans-serif' }}>Info</Nav.Link>
-                                    <Nav.Link as={Link} to="/photo" style={{ color: 'white', fontFamily:'sans-serif' }}>Gallery</Nav.Link>
-                                    <Nav.Link as={Link} to="/contact" style={{ color: 'white' , fontFamily:'sans-serif'}}>Contact</Nav.Link>
+                                <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'revert-layer' }}>
+                                    <Nav.Link as={Link} to="/info" style={{ color: 'white', fontFamily: 'sans-serif' }}>Info</Nav.Link>
+                                    <Nav.Link as={Link} to="/photo" style={{ color: 'white', fontFamily: 'sans-serif' }}>Gallery</Nav.Link>
+                                    <Nav.Link as={Link} to="/contact" style={{ color: 'white', fontFamily: 'sans-serif' }}>Contact</Nav.Link>
                                     <Dropdown align="end">
-                                        <Dropdown.Toggle variant="dark" id="dropdown-basic" style={{ fontFamily:'sans-serif'}}>
+                                        <Dropdown.Toggle variant="dark" id="dropdown-basic" style={{ fontFamily: 'sans-serif' }}>
                                             Hi, {username}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
@@ -74,7 +75,7 @@ const App = function () {
                             <Route path='/contact' element={<Contact />} />
                             <Route path='/photo' element={<Photo />} />
                             <Route path="/my-reservations" element={<MyReservationsPage />} />
-
+                            <Route path='/rooms/:id/reservations' element={<RoomReservations />} />
                         </Routes>
                     </Container>
                 </Router>

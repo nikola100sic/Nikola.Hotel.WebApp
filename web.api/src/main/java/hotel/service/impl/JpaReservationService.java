@@ -93,4 +93,9 @@ public class JpaReservationService implements ReservationService {
 		Long userId = user.get().getId();
 		return reservationRepository.findByUserId(userId);
 	}
+
+	@Override
+	public List<Reservation> findByRoomId(Long roomId) {
+		return reservationRepository.findByRoomId(roomId);
+	}
 }

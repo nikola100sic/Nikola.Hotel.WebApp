@@ -105,12 +105,16 @@ export const Reservation = () => {
     };
 
     const isLoggedIn = !!localStorage.getItem("jwt");
+    
     const username = isLoggedIn ? extractInfoFromToken().sub : null; // `sub` is often used for the username
 
     console.log("Username:", username);
 
 
     const goToReservation = (roomId) => {
+    const isConfirmed = window.confirm("Are you sure you want to make a reservation?");
+
+    if (isConfirmed) {
         const dto = {
             startDate: startDate,
             endDate: endDate,
@@ -118,25 +122,20 @@ export const Reservation = () => {
             username: username,
         };
         console.log(dto);
+
         hotelAxios.post('/reservations', dto)
             .then(res => {
                 console.log(res);
-                const isConfirmed = window.confirm("Are you sure you want to delete this item?");
-
-                if (isConfirmed) {
-                    alert("Successful booking");
-                    navigate("/my-reservations");
-
-                } else {
-                    alert("User canceled the action.");
-                    navigate("/reservations");
-
-                }
+                alert("Successful booking");
+                navigate("/my-reservations");
             })
             .catch(error => {
                 console.log(error);
             });
-    };
+    } else {
+        alert("User canceled the action.");
+    }
+};
 
     const handleMyReservations = async () => {
         navigate("/my-reservations");
@@ -203,9 +202,11 @@ export const Reservation = () => {
                                                 <Card.Text>
                                                     <strong>Capacity:</strong> {room.capacity} bed{room.capacity > 1 ? 's' : ""}
                                                     <br />
-                                                    <strong>Price for night:</strong> {room.price} €
+                                                    <strong>Price per night:</strong> {room.price} €
                                                     <br/>
-                                                    <strong>Total price:</strong> {room.price * numberOfNights}€ for {numberOfNights} {numberOfNights> 1 ? 'nights' : "night"}
+                                                    <strong>Total nights:</strong> {numberOfNights} {numberOfNights> 1 ? 'nights' : "night"}
+                                                    <br/>
+                                                    <strong>Total price:</strong> {room.price * numberOfNights}€
 
                                                     <br />
                                                     <Button className="btn btn-primary me-1" onClick={() => goToReservation(room.id)}><FontAwesomeIcon icon={faR} /> Reservation</Button>
@@ -214,7 +215,7 @@ export const Reservation = () => {
                                         </Card>
                                     </Col>
                                 ))}
-                            </Row>
+                            </Row> 
                         )}
                     </Col>
                 </Row>

@@ -25,5 +25,8 @@ public interface ReservationService {
 	List<Reservation> findByUserId(Long userId);
 
 	List<Reservation> getReservationsByUsername(String username);
+	
+	List<Reservation> findByRoomId(Long roomId);
+
 
 }

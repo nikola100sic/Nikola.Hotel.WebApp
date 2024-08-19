@@ -22,5 +22,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 			@Param("roomId") Long roomId, Pageable pageable);
 
 	List<Reservation> findByUserId(Long userId);
+	
+	List<Reservation> findByRoomId(Long roomId);
 
 }

@@ -68,20 +68,19 @@ const MyReservationsPage = () => {
         const now = new Date();
         const end = new Date(endDate);
 
-        if (end<now) {
-            return 'status-indicator past'; 
-        } else if (end>now) {
-            return 'status-indicator active'; 
+        if (end < now) {
+            return 'status-indicator past';
+        } else if (end > now) {
+            return 'status-indicator active';
         }
-        return ''; 
+        return '';
     };
 
     return (
         <div className="containerImage">
             <div className="fullscreen-backgroundImage"></div>
             <div className="contentImageReservationRooms">
-                <h2 style={{ color: 'black' }}>My Reservations</h2>
-                
+                <h2 style={{ color: 'navy' }}><strong>My reservations</strong></h2>
                 {error && <Alert variant="danger">{error}</Alert>}
                 {reservations.length > 0 ? (
                     <Row className="g-4">
@@ -109,10 +108,11 @@ const MyReservationsPage = () => {
                 ) : (
                     <p>No reservations found.</p>
                 )}
-                <Button className="btn btn-primary me-1" onClick={() => goBack()}>
-                    
-                    <FontAwesomeIcon icon={faBackward} /> Back
-                </Button>
+                <div className="page mt-4">
+                    <Button className="btn btn-primary me-1" onClick={() => goBack()}>
+                        <FontAwesomeIcon icon={faBackward} /> Back
+                    </Button>
+                </div>
             </div>
         </div>
     );

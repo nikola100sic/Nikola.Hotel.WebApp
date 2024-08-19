@@ -78,5 +78,11 @@ public class ReservationController {
 		List<Reservation> reservations = reservationService.getReservationsByUsername(username);
 		return new ResponseEntity<>(toReservationDTO.convert(reservations), HttpStatus.OK);
 	}
+	@GetMapping("/{roomId}")
+	public ResponseEntity<List<ReservationDTO>> getReservationsByRoomId(@PathVariable Long roomId) {
+		List<Reservation> reservations = reservationService.findByRoomId(roomId);
+		return new ResponseEntity<>(toReservationDTO.convert(reservations), HttpStatus.OK);
+	}
+	
 
 }
