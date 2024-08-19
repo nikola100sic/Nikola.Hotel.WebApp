@@ -2,7 +2,7 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faInstagramSquare, faSquareInstagram, faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons'; // Uvezite Instagram ikonu
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'; // Uvezite Instagram ikonu
 
 
 
