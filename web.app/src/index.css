@@ -1,0 +1,309 @@
+table {
+    border: 3px solid navy;
+    width: 50%;
+  
+  
+    text-align: center;
+  }
+  
+  h1 {
+    color: hwb(165 44% 29%);
+    text-align: center;
+    padding-top: 20%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .welcome{
+    color: hwb(221 6% 88%);
+    text-align: center;
+    padding-top: 19%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  }
+  .registration-form{
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    padding: 10px;
+    border-radius: 9px; /* Zaobljeni uglovi */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Blaga senka */
+    margin-top: 100px; /* Pomera sadržaj prema gore koristeći negativan razmak */
+
+  }
+  
+  h2 {
+    color: hsl(200, 6%, 10%);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  
+  .checkbox-label {
+      display: flex;
+       align-items: center;
+   }
+      
+   .checkbox-label input[type="checkbox"] {
+       margin-right: 8px; 
+    }
+
+  #logout {
+    background-color: #3655a3;
+    border-color:  #3353a3;
+  }
+  
+  .byName {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+    padding-top: 17%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  .navbar {
+    position: fixed; /* Normalan tok dokumenta */
+    width: 100%;
+  }
+  
+  
+  .button {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  
+  }
+  
+  .button-navy {
+    background-color: rgb(58, 58, 58);
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: navy;
+  }
+  
+  li {
+    float: left;
+  }
+
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: rgb(216, 221, 226);
+  }
+  
+
+  .loginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover; 
+}
+  
+  .addButton{
+    margin-left: 88%;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+  }
+  
+  .page{
+    padding-right:  80%;
+  }
+
+  .login-box {
+    background: rgba(70, 68, 68, 0.9); /* Lagano prozirna pozadina za bolju vidljivost */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    
+}
+
+.input-group {
+    width: 100%;
+}
+
+.show-password-button {
+    height: 3%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-style: italic;
+    border-color: #c4c4c4;
+    background-color: #ffffff;
+
+}
+
+.login-button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 50%;
+    width: 50%;
+    margin-top: 1rem;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.fullscreen-background {
+  position: absolute; /* Pozicija apsolutno za pozadinsku sliku */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Postavlja visinu na 100% visine vidljivog dela prozora */
+  background: url('../src/assets/images/hotel.jpg') no-repeat center center fixed;
+  background-size: cover; /* Omogućava da slika pokrije celu pozadinu */
+  z-index: -1; /* Postavlja pozadinsku sliku ispod sadržaja */
+}
+
+.content {
+  position: relative; /* Postavlja sadržaj iznad pozadinske slike */
+  color: white; /* Postavite boju teksta u kontrastu sa slikom */
+  text-align: center; /* Centriranje teksta */
+  padding: 20px; /* Dodajte padding po potrebi */
+}
+
+.blur {
+  backdrop-filter: blur(5px); 
+  background-color: rgba(158, 131, 72, 0.5); /* Poluprovidna pozadina za bolju čitljivost teksta */
+  padding: 20px; /* Dodajte padding po potrebi */
+  border-radius: 1px; /* Zaokruživanje ivica ako je potrebno */
+}
+
+/* Background image for the component */
+.fullscreen-backgroundImage {
+  position: fixed; /* Use fixed to keep the image in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full height */
+  background: url('../src/assets/images/hotel.jpg') no-repeat center center fixed; /* Adjust path to image */
+  background-size: cover; /* Cover the entire area */
+  filter: blur(6px); /* Apply blur effect */
+  z-index: -1; /* Place behind content */
+}
+
+/* Container for the content */
+.containerImage {
+  position: relative; /* To place content on top of background */
+
+  
+}
+
+/* Content styling */
+.contentImageReservationRooms {
+  padding: 20px;
+  border-radius: 8px; /* Zaobljeni uglovi */
+  margin-top: 70px; /* Pomera sadržaj prema gore koristeći negativan razmak */
+}
+
+.contentContactInfo {
+  padding: 10px;
+  border-radius: 8px; /* Zaobljeni uglovi */
+  margin-top: -80px; /* Pomera sadržaj prema gore koristeći negativan razmak */
+}
+
+
+.gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 95px; /* Pomera sadržaj prema gore koristeći negativan razmak */
+  object-fit: cover; /* Održava proporcije slike */
+  transition: opacity 10s ease-in-out; /* Efekat prelaza za promenu slike */
+  opacity: 1; /* Početna vidljivost */
+
+}
+
+.gallery img {
+  max-width: 80vw;
+  max-height: 80vh;
+  margin: 0 10px;
+  border-radius: 2%;
+
+}
+
+
+.status-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white; /* Bel okvir oko indikatora */
+}
+
+.status-indicator.past {
+  background-color: green; /* Zelena za prošle rezervacije */
+}
+
+.status-indicator.active {
+  background-color: rgb(255, 196, 0); /* Žuta za aktivne rezervacije */
+}
+
+.card-img-wrapper {
+  position: relative;
+}
+
+.img-thumbnail {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.modal-content {
+  background-color: transparent;
+  margin-top: 10%;
+
+}
+
+.modal-body {
+  text-align: center;
+}
+.photo-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.slider-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Prelaz traje 1 sekundu */
+}
+
+.slider-image.active {
+  opacity: 1;
+}
