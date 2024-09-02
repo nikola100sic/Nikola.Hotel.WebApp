@@ -11,7 +11,7 @@ export const Reservation = () => {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [capacity, setCapacity] = useState("");
-    const [capacities, setCapacities] = useState([]); // State for capacities
+    const [capacities, setCapacities] = useState([]);
     const [availableRooms, setAvailableRooms] = useState([]);
     const [error, setError] = useState("");
     const [numberOfNights, setNumberOfNights] = useState("");
@@ -38,13 +38,13 @@ export const Reservation = () => {
     }, [availableRooms]);
 
     useEffect(() => {
-        document.title = "Reservation- Hotel Nicola's"; // Postavlja naslov kada se komponenta montira
+        document.title = "Reservation- Hotel Nicola's";
     }, []);
 
 
     const handleSearch = async () => {
         let dateNow = new Date();
-        let today = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate()); // Početak dana
+        let today = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate()); 
 
         if (!startDate || !endDate) {
             setError("Please select both start and end dates.");
