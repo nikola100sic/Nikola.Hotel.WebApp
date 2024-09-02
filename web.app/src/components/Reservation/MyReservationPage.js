@@ -69,9 +69,9 @@ const MyReservationsPage = () => {
         const end = new Date(endDate);
 
         if (end < now) {
-            return 'status-indicator past';
-        } else if (end > now) {
             return 'status-indicator active';
+        } else if (end > now) {
+            return 'status-indicator past';
         }
         return '';
     };
