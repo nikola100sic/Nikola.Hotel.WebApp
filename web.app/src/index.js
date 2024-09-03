@@ -57,7 +57,7 @@ const App = function () {
                                             Restaurants
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                        <Dropdown.Item as={Link} to="/aLaCarteRestaurant">A la carte restaurant </Dropdown.Item>
+                                        <Dropdown.Item as={Link} to="/alacarteRestaurant">A la carte restaurant </Dropdown.Item>
                                         <Dropdown.Item as={Link} to="/pansionRestaurant">Pansion restaurant</Dropdown.Item>
                                         <Dropdown.Item as={Link} to="/nicolasRestaurant">Nicola's restaurant</Dropdown.Item>
                                         </Dropdown.Menu>
@@ -82,7 +82,7 @@ const App = function () {
                             <Route path='/' element={<Home />} />
                             <Route path='/rooms' element={<Rooms />} />
                             <Route path='/reservations' element={<Reservation />} />
-                            <Route path='/alacarte' element={<ALaCarte />} />
+                            <Route path='/alacarteRestaurant' element={<ALaCarte />} />
                             <Route path='/info' element={<Info />} />
                             <Route path='/contact' element={<Contact />} />
                             <Route path='/photo' element={<Photo />} />
@@ -113,7 +113,7 @@ const App = function () {
                                             Restaurants
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                        <Dropdown.Item as={Link} to="/aLaCarteRestaurant">A la carte restaurant </Dropdown.Item>
+                                        <Dropdown.Item as={Link} to="/alacarteRestaurant">A la carte restaurant </Dropdown.Item>
                                         <Dropdown.Item as={Link} to="/pansionRestaurant">Pansion restaurant</Dropdown.Item>
                                         <Dropdown.Item as={Link} to="/nicolasRestaurant">Nicola's restaurant</Dropdown.Item>
                                         </Dropdown.Menu>
@@ -139,7 +139,7 @@ const App = function () {
                         <Route path='/info' element={<Info />} />
                         <Route path='/contact' element={<Contact />} />
                         <Route path='/photo' element={<Photo />} />
-                        <Route path='/alacarte' element={<ALaCarte />} />
+                        <Route path='/alacarteRestaurant' element={<ALaCarte />} />
                     </Routes>
                 </Container>
             </Router>
