@@ -304,3 +304,32 @@ html, body {
 .slider-image.active {
   opacity: 1;
 }
+
+#dropdown-basic{
+  background-color: #14405e; /* Pozadina kada se pređe mišem */
+  color: #ffffff; /* Boja teksta kada se pređe mišem */
+
+}
+
+.restaurant-photo {
+  display: block;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 10%;
+
+  
+}
+
+.restaurantsphoto {
+  width: 75%; /* Smanjivanje širine slika */
+  height: fit-content; /* Održavanje proporcija slike */
+  margin: 3px; /* Razmak oko slika */
+  border-radius: 8px; /* Zaobljeni uglovi */
+  object-fit: cover; /* Prilagođavanje slike okviru bez izobličavanja */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Blagi efekat senke za moderniji izgled */
+  transition: transform 0.3s ease; /* Animacija prilikom hover-a */
+}
+
+.restaurantsphoto:hover {
+  transform: scale(1.05); /* Blago povećanje slike na hover */
+}
