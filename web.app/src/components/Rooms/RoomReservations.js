@@ -13,15 +13,16 @@ export const RoomReservations = () => {
     const roomId = routeParams.id
     const navigate = useNavigate()
 
-    const fetchReservations = async () => {
-
-        try {
-            const response = await hotelAxios.get(`/reservations/${roomId}`);
-            setReservations(response.data);
-        } catch (error) {
-            console.error("Error fetching reservations:", error);
-        }
+    const fetchReservations = () => {
+        hotelAxios.get(`/reservations/${roomId}`)
+            .then(response => {
+                setReservations(response.data);
+            })
+            .catch(error => {
+                console.error("Error fetching reservations:", error);
+            });
     };
+    
 
     useEffect(() => {
         fetchReservations();
