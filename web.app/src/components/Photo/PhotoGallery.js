@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Row, Col, Modal, Button } from 'react-bootstrap';
-import { photos } from '../../assets/images'; // Pravilna putanja
+import { photos } from '../../assets/images';
 
 const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
