@@ -26,7 +26,7 @@ export const ALaCarte = () => {
                 <Row>
                     <Col md={6}>
                         <div className="text-container">
-                            <h1>A La Carte Restaurant</h1>
+                            <h1>A la carte restaurant</h1>
                             <p>
                                 Enjoy a fine dining experience with a variety of gourmet dishes prepared by our top chefs.
                                 Our menu includes a selection of local and international cuisine to satisfy every palate.
@@ -34,7 +34,7 @@ export const ALaCarte = () => {
                         </div>
                         <div className='text-container'>
                             <h4>Work time</h4>
-                            <p>Every day from 11am to 10pm</p>
+                            <p>Every day from 11 am to 10 pm</p>
                             <i>Welcome!</i>
                         </div>
                     </Col>
