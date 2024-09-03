@@ -16,6 +16,8 @@ import { jwtDecode } from 'jwt-decode';
 import MyReservationsPage from './components/Reservation/MyReservationPage';
 import { RoomReservations } from './components/Rooms/RoomReservations';
 import { ALaCarte } from './components/Restaurants/ALaCarte';
+import { PansionRestaurant } from './components/Restaurants/PansionRestaurant';
+import { NicolasRestaurant } from './components/Restaurants/NicolasRestaurant';
 
 const getUsernameFromToken = () => {
     const token = window.localStorage.getItem("jwt");
@@ -83,6 +85,8 @@ const App = function () {
                             <Route path='/rooms' element={<Rooms />} />
                             <Route path='/reservations' element={<Reservation />} />
                             <Route path='/alacarteRestaurant' element={<ALaCarte />} />
+                            <Route path='/pansionRestaurant' element={<PansionRestaurant />} />
+                            <Route path='/nicolasRestaurant' element={<NicolasRestaurant />} />
                             <Route path='/info' element={<Info />} />
                             <Route path='/contact' element={<Contact />} />
                             <Route path='/photo' element={<Photo />} />
@@ -140,6 +144,8 @@ const App = function () {
                         <Route path='/contact' element={<Contact />} />
                         <Route path='/photo' element={<Photo />} />
                         <Route path='/alacarteRestaurant' element={<ALaCarte />} />
+                        <Route path='/pansionRestaurant' element={<PansionRestaurant />} />
+                        <Route path='/nicolasRestaurant' element={<NicolasRestaurant />} />
                     </Routes>
                 </Container>
             </Router>
