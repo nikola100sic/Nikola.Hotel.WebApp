@@ -50,8 +50,6 @@ export const RoomReservations = () => {
                         {reservations.map(reservation => (
                             <Col md={4} key={reservation.id}>
                                 <Card className="reservation-card">
-                                    <div className="card-img-wrapper">
-                                    </div>
                                     <Card.Body>
                                         <Card.Title>Room № {reservation.roomNumber}</Card.Title>
                                         <Card.Text>
