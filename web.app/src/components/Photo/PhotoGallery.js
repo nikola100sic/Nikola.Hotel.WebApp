@@ -35,8 +35,7 @@ const PhotoGallery = () => {
         ))}
       </Row>
 
-      {/* Modal za uvećanje slike */}
-      <Modal show={show} onHide={handleClose} size="lg">
+      <Modal show={show} onHide={handleClose} size="md">
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
