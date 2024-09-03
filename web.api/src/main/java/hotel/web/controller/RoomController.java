@@ -62,7 +62,7 @@ public class RoomController {
 	@GetMapping("/capacities")
 	public ResponseEntity<List<Integer>> getAllCapacities() {
 		List<Integer> capacities = roomService.getAllCapacities();
-		return ResponseEntity.ok(capacities);
+		return new ResponseEntity<>(capacities, HttpStatus.OK);
 	}
 
 	@GetMapping("/available")
