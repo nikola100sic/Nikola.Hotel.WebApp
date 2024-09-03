@@ -306,12 +306,12 @@ html, body {
 }
 
 #dropdown-basic{
-  background-color: #14405e; /* Pozadina kada se pređe mišem */
-  color: #ffffff; /* Boja teksta kada se pređe mišem */
+  background-color: #14405e; 
+  color: #ffffff; 
 
 }
 
-.restaurant-photo {
+.restaurants-photo {
   display: block;
   justify-content: space-between;
   gap: 20px;
@@ -320,16 +320,16 @@ html, body {
   
 }
 
-.restaurantsphoto {
-  width: 75%; /* Smanjivanje širine slika */
-  height: fit-content; /* Održavanje proporcija slike */
-  margin: 3px; /* Razmak oko slika */
-  border-radius: 8px; /* Zaobljeni uglovi */
-  object-fit: cover; /* Prilagođavanje slike okviru bez izobličavanja */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Blagi efekat senke za moderniji izgled */
-  transition: transform 0.3s ease; /* Animacija prilikom hover-a */
+.restaurant-photo {
+  width: 75%;
+  height: fit-content; 
+  margin: 3px; 
+  border-radius: 8px; 
+  object-fit: cover; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease; 
 }
 
-.restaurantsphoto:hover {
-  transform: scale(1.05); /* Blago povećanje slike na hover */
+.restaurant-photo:hover {
+  transform: scale(1.05); 
 }
