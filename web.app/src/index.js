@@ -15,6 +15,7 @@ import { Photo } from './components/Photo/Photo';
 import { jwtDecode } from 'jwt-decode';
 import MyReservationsPage from './components/Reservation/MyReservationPage';
 import { RoomReservations } from './components/Rooms/RoomReservations';
+import { ALaCarte } from './components/Restaurants/ALaCarte';
 
 const getUsernameFromToken = () => {
     const token = window.localStorage.getItem("jwt");
@@ -51,6 +52,16 @@ const App = function () {
                             </Nav>
                             <Nav className="ms-auto">
                                 <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'revert-layer' }}>
+                                <Dropdown align="end">
+                                        <Dropdown.Toggle variant="dark" id="dropdown" style={{ fontFamily: 'sans-serif' }}>
+                                            Restaurants
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                        <Dropdown.Item as={Link} to="/aLaCarteRestaurant">A la carte restaurant </Dropdown.Item>
+                                        <Dropdown.Item as={Link} to="/pansionRestaurant">Pansion restaurant</Dropdown.Item>
+                                        <Dropdown.Item as={Link} to="/nicolasRestaurant">Nicola's restaurant</Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                     <Nav.Link as={Link} to="/info" style={{ color: 'white', fontFamily: 'sans-serif' }}>Info</Nav.Link>
                                     <Nav.Link as={Link} to="/photo" style={{ color: 'white', fontFamily: 'sans-serif' }}>Gallery</Nav.Link>
                                     <Nav.Link as={Link} to="/contact" style={{ color: 'white', fontFamily: 'sans-serif' }}>Contact</Nav.Link>
@@ -71,6 +82,7 @@ const App = function () {
                             <Route path='/' element={<Home />} />
                             <Route path='/rooms' element={<Rooms />} />
                             <Route path='/reservations' element={<Reservation />} />
+                            <Route path='/alacarte' element={<ALaCarte />} />
                             <Route path='/info' element={<Info />} />
                             <Route path='/contact' element={<Contact />} />
                             <Route path='/photo' element={<Photo />} />
@@ -96,6 +108,16 @@ const App = function () {
                         </Nav>
                         <Nav className="ms-auto">
                             <div className="d-flex align-items-center">
+                            <Dropdown align="end">
+                                        <Dropdown.Toggle variant="dark" id="dropdown" style={{ fontFamily: 'sans-serif' }}>
+                                            Restaurants
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                        <Dropdown.Item as={Link} to="/aLaCarteRestaurant">A la carte restaurant </Dropdown.Item>
+                                        <Dropdown.Item as={Link} to="/pansionRestaurant">Pansion restaurant</Dropdown.Item>
+                                        <Dropdown.Item as={Link} to="/nicolasRestaurant">Nicola's restaurant</Dropdown.Item>
+                                        </Dropdown.Menu>
+                            </Dropdown>
                                 <Nav.Link as={Link} to="/info" style={{ color: 'white' }}>Info</Nav.Link>
                                 <Nav.Link as={Link} to="/photo" style={{ color: 'white' }}>Gallery</Nav.Link>
                                 <Nav.Link as={Link} to="/contact" style={{ color: 'white' }}>Contact</Nav.Link>
@@ -117,6 +139,7 @@ const App = function () {
                         <Route path='/info' element={<Info />} />
                         <Route path='/contact' element={<Contact />} />
                         <Route path='/photo' element={<Photo />} />
+                        <Route path='/alacarte' element={<ALaCarte />} />
                     </Routes>
                 </Container>
             </Router>
