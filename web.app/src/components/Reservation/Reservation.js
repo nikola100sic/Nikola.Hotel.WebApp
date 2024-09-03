@@ -42,55 +42,56 @@ export const Reservation = () => {
     }, []);
 
 
-    const handleSearch = async () => {
+    const handleSearch = () => {
         let dateNow = new Date();
-        let today = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate()); 
-
+        let today = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate());
+    
         if (!startDate || !endDate) {
             setError("Please select both start and end dates.");
             return;
         }
         const start = new Date(startDate);
         const end = new Date(endDate);
-
+    
         if (start > end) {
             setError("Start date cannot be after end date.");
             return;
         }
-
+    
         if (start < today) {
             setError("Start date must be today or in the future.");
             return;
         }
-
+    
         if (end <= today) {
             setError("End date must be in the future.");
             return;
         }
-
+    
         if (start.getTime() === end.getTime()) {
             setError("Start date and end date cannot be the same.");
             return;
         }
-
-        try {
-            const response = await hotelAxios.get('/rooms/available', {
-                params: { startDate, endDate, capacity }
-            });
+    
+        hotelAxios.get('/rooms/available', {
+            params: { startDate, endDate, capacity }
+        })
+        .then(response => {
             setAvailableRooms(response.data);
             setError("");
-
+    
             var timeDiff = Math.abs(start.getTime() - end.getTime());
-            var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-            setNumberOfNights(numberOfNights)
-
+            var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            setNumberOfNights(numberOfNights);
+    
             console.log(startDate, endDate, capacity);
-        } catch (error) {
+        })
+        .catch(error => {
             console.error("Error fetching available rooms:", error);
             setError("Error fetching available rooms.");
-        }
+        });
     };
-
+    
     const extractInfoFromToken = () => {
         const token = localStorage.getItem("jwt");
         if (token) {
@@ -113,7 +114,6 @@ export const Reservation = () => {
 
     const goToReservation = (roomId) => {
     const isConfirmed = window.confirm("Are you sure you want to make a reservation?");
-
     if (isConfirmed) {
         const dto = {
             startDate: startDate,
@@ -137,7 +137,7 @@ export const Reservation = () => {
     }
 };
 
-    const handleMyReservations = async () => {
+    const handleMyReservations = () => {
         navigate("/my-reservations");
     }
 
@@ -207,7 +207,6 @@ export const Reservation = () => {
                                                     <strong>Total nights:</strong> {numberOfNights} {numberOfNights> 1 ? 'nights' : "night"}
                                                     <br/>
                                                     <strong>Total price:</strong> {room.price * numberOfNights}€
-
                                                     <br />
                                                     <Button className="btn btn-primary me-1" onClick={() => goToReservation(room.id)}><FontAwesomeIcon icon={faR} /> Reservation</Button>
                                                 </Card.Text>
