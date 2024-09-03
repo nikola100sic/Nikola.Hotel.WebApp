@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { photos } from '../../assets/images'; // Pravilna putanja
-import PhotoGallery from './PhotoGallery'; // Importujte novu komponentu
+import { photos } from '../../assets/images'; 
+import PhotoGallery from './PhotoGallery'; 
 
 export const Photo = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,13 +8,15 @@ export const Photo = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsMoving(true); // Aktivira pomeranje
+      setIsMoving(true);
       setCurrentIndex(prevIndex => {
-        const newIndex = (prevIndex + 1) % photos.length;
-        return newIndex;
+        let newIndex = prevIndex + 1;
+        if (newIndex >= photos.length) {
+            newIndex = 0;
+        }
+            return newIndex;
       });
     }, 3000);
-  
     return () => clearInterval(interval);
   }, []);
 
@@ -27,7 +29,6 @@ export const Photo = () => {
         <img 
           src={photos[currentIndex]} 
           alt="Hotel" 
-          className={`header-image ${isMoving ? 'moving' : ''}`} 
         />
       </div>
       <PhotoGallery /> 
