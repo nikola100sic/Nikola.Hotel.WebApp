@@ -81,21 +81,23 @@ table {
     background-color: rgb(58, 58, 58);
   }
   
-  ul {
+  /* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: navy;
-  }
+    color: #558de2;
+  } */
   
   li {
-    float: left;
+    text-align: left;
+    color: rgb(18, 204, 218);
+    
   }
 
   
   li a {
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
