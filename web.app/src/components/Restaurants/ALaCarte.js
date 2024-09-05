@@ -21,7 +21,7 @@ export const ALaCarte = () => {
 
     return (
         <div className="containerImage">
-            <div className="fullscreen-backgroundImage"></div>
+            <div className="fullscreen-backgroundAlacarte"></div>
             <div className="content-container">
                 <Row>
                     <Col md={6}>
@@ -31,14 +31,13 @@ export const ALaCarte = () => {
                                 Enjoy a fine dining experience with a variety of gourmet dishes prepared by our top chefs.
                                 Our menu includes a selection of local and international cuisine to satisfy every palate.
                             </p>
-                        </div>
-                        <div className='text-container'>
+                            </div>
+                            <div className='text-container'>
                             <h4>Work time</h4>
                             <p>Every day from 11 am to 10 pm</p>
                             <i>Welcome!</i>
-                        </div>
+                            </div>
                     </Col>
-                    
                     <Col md={6}>
                         <div className="restaurants-photo">
                             <img src={image1} 
