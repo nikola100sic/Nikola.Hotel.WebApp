@@ -14,8 +14,8 @@ export const PansionRestaurant = ()=>{
         setShow(true);
     };
     return (
-<div className="containerImage">
-            <div className="fullscreen-backgroundImage"></div>
+    <div className="containerImage">
+            <div className="fullscreen-backgroundPansion"></div>
             <div className="content-container">
                 <Row>
                     <Col md={6}>
@@ -27,21 +27,19 @@ export const PansionRestaurant = ()=>{
                              all prepared with locally sourced ingredients. Guests can enjoy a diverse selection of flavors, 
                              catering to different tastes and dietary preferences, ensuring a satisfying dining experience throughout the day.
                             </p>
-                        </div>
-                        <div className='text-container'>
+                            </div>
+                            <div className="text-container">
                             <h4>Work time</h4>
-                            <div>
                             <ul>
                                 <li>Breakfast: 6 am - 9 am</li>
                                 <li>Lunch : 13 pm - 16 pm</li>
                                 <li>Dinner : 18 pm - 21 pm</li>
 
                             </ul>
-                            </div>
                             <i>Welcome!</i>
-                        </div>
+
+                            </div>
                     </Col>
-                    
                     <Col md={6}>
                         <div className="restaurants-photo">
                             <img src={image1} 
