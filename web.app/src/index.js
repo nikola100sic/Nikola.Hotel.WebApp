@@ -19,6 +19,7 @@ import { ALaCarte } from './components/Restaurants/ALaCarte';
 import { PansionRestaurant } from './components/Restaurants/PansionRestaurant';
 import { NicolasRestaurant } from './components/Restaurants/NicolasRestaurant';
 import { City } from './components/City/City';
+import { KazandzijskoSokace, TinkersAlley } from './components/City/Tinkers-alley';
 
 const getUsernameFromToken = () => {
     const token = window.localStorage.getItem("jwt");
@@ -51,7 +52,6 @@ const App = function () {
                             <Nav className="me-auto"  >
                                 <Nav.Link as={Link} to="rooms" style={{ color: 'white', fontFamily: 'sans-serif' }}> Rooms </Nav.Link>
                                 <Nav.Link as={Link} to="reservations" style={{ color: 'white', fontFamily: 'sans-serif' }}> Reservations </Nav.Link>
-
                             </Nav>
                             <Nav className="ms-auto">
                                 <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'revert-layer' }}>
@@ -95,6 +95,8 @@ const App = function () {
                             <Route path='/photo' element={<Photo />} />
                             <Route path="/my-reservations" element={<MyReservationsPage />} />
                             <Route path='/rooms/:id/reservations' element={<RoomReservations />} />
+                            <Route path='/city/tinkers-alley' element={<TinkersAlley />} />
+
                         </Routes>
                     </Container>
                 </Router>
@@ -151,6 +153,8 @@ const App = function () {
                         <Route path='/alacarteRestaurant' element={<ALaCarte />} />
                         <Route path='/pansionRestaurant' element={<PansionRestaurant />} />
                         <Route path='/nicolasRestaurant' element={<NicolasRestaurant />} />
+                        <Route path='/city/tinkers-alley' element={<TinkersAlley />} />
+
                     </Routes>
                 </Container>
             </Router>
