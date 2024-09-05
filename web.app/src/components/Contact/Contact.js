@@ -9,7 +9,7 @@ export const Contact = () => {
     return (
         <div className="containerImage">
             <div className="fullscreen-backgroundImage"></div>
-            <Col className="contentContactInfo">
+            <div className="text-containerContact">
                 <h1 style={{color:'black'}}>Contact Us</h1>
                 <p style={{color:'black' , fontFamily:'revert-layer', fontSize:'110%'}}>If you have any questions, you can contact us via email or phone call.</p>
 
@@ -22,7 +22,7 @@ export const Contact = () => {
 
 
                 </div>
-            </Col>
+            </div>
         </div>
     );
 };
