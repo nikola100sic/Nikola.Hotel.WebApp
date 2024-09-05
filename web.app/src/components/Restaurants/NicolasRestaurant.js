@@ -1,8 +1,8 @@
 
 import { useState } from "react"
 import { Button, Col, Modal, Row } from "react-bootstrap";
-import image1 from '../../assets/images/nicolas3.jpg'
-import image2 from '../../assets/images/nicolas1.jpg'
+import image1 from '../../assets/images/nicolas.jpg'
+import image2 from '../../assets/images/nicolas4.jpg'
 
 export const NicolasRestaurant = ()=>{
 
@@ -16,7 +16,7 @@ export const NicolasRestaurant = ()=>{
     };
     return (
 <div className="containerImage">
-            <div className="fullscreen-backgroundImage"></div>
+            <div className="fullscreen-backgroundNicolas"></div>
             <div className="content-container">
                 <Row>
                     <Col md={6}>
