@@ -18,6 +18,7 @@ import { RoomReservations } from './components/Rooms/RoomReservations';
 import { ALaCarte } from './components/Restaurants/ALaCarte';
 import { PansionRestaurant } from './components/Restaurants/PansionRestaurant';
 import { NicolasRestaurant } from './components/Restaurants/NicolasRestaurant';
+import { City } from './components/City/City';
 
 const getUsernameFromToken = () => {
     const token = window.localStorage.getItem("jwt");
@@ -56,7 +57,7 @@ const App = function () {
                                 <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'revert-layer' }}>
                                 <Dropdown align="end">
                                         <Dropdown.Toggle variant="dark" id="dropdown" style={{ fontFamily: 'sans-serif' }}>
-                                            Restaurants
+                                            Hotel restaurants
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
                                         <Dropdown.Item as={Link} to="/alacarteRestaurant">A la carte restaurant </Dropdown.Item>
@@ -64,6 +65,7 @@ const App = function () {
                                         <Dropdown.Item as={Link} to="/nicolasRestaurant">Nicola's restaurant</Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
+                                    <Nav.Link as={Link} to="/city" style={{ color: 'white', fontFamily: 'sans-serif' }}>About city</Nav.Link>
                                     <Nav.Link as={Link} to="/info" style={{ color: 'white', fontFamily: 'sans-serif' }}>Info</Nav.Link>
                                     <Nav.Link as={Link} to="/photo" style={{ color: 'white', fontFamily: 'sans-serif' }}>Gallery</Nav.Link>
                                     <Nav.Link as={Link} to="/contact" style={{ color: 'white', fontFamily: 'sans-serif' }}>Contact</Nav.Link>
@@ -87,6 +89,7 @@ const App = function () {
                             <Route path='/alacarteRestaurant' element={<ALaCarte />} />
                             <Route path='/pansionRestaurant' element={<PansionRestaurant />} />
                             <Route path='/nicolasRestaurant' element={<NicolasRestaurant />} />
+                            <Route path='/city' element={<City />} />
                             <Route path='/info' element={<Info />} />
                             <Route path='/contact' element={<Contact />} />
                             <Route path='/photo' element={<Photo />} />
@@ -122,6 +125,7 @@ const App = function () {
                                         <Dropdown.Item as={Link} to="/nicolasRestaurant">Nicola's restaurant</Dropdown.Item>
                                         </Dropdown.Menu>
                             </Dropdown>
+                                <Nav.Link as={Link} to="/city" style={{ color: 'white', fontFamily: 'sans-serif' }}>About city</Nav.Link>
                                 <Nav.Link as={Link} to="/info" style={{ color: 'white' }}>Info</Nav.Link>
                                 <Nav.Link as={Link} to="/photo" style={{ color: 'white' }}>Gallery</Nav.Link>
                                 <Nav.Link as={Link} to="/contact" style={{ color: 'white' }}>Contact</Nav.Link>
@@ -140,6 +144,7 @@ const App = function () {
                         <Route path='/rooms' element={<Rooms />} />
                         <Route path='/reservation' element={<Reservation />} />
                         <Route path="*" element={<Navigate replace to="/login" />} />
+                        <Route path='/city' element={<City />} />
                         <Route path='/info' element={<Info />} />
                         <Route path='/contact' element={<Contact />} />
                         <Route path='/photo' element={<Photo />} />
