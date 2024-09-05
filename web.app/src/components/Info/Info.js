@@ -8,17 +8,15 @@ export const Info = () => {
     return (
         <div className="containerImage">
             <div className="fullscreen-backgroundImage"></div>
-            <Col className="contentContactInfo">
+            <div className="text-containerInfo">
                 <h1 style={{color:'black'}}>Hotel Information</h1>
                 <p style={{color:'black', fontFamily:'revert-layer', fontSize:'110%'}}>
                     Hotel Nicola's is located in the heart of the city. The excellent location is not the only thing that sets this hotel apart from others. <br/>
                     Our friendly staff will ensure that every moment of your stay with us is delightful, <br/>
                     and you will be able to enjoy our spa and wellness center as well as the delicious food prepared by our chefs. <br/>
                 </p>
-                
                 <h2>Hotel Address</h2>
                 <p>{hotelAddress}</p>
-                
                 <h4>Location on Google Maps</h4>
                 <iframe
                     src={googleMapsUrl}
@@ -29,7 +27,7 @@ export const Info = () => {
                     loading="lazy"
                     title='Google map location'
                 ></iframe>
-            </Col>
+            </div>
         </div>
     );
 };
