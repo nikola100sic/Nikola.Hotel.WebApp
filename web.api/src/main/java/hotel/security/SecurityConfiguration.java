@@ -55,16 +55,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.headers().cacheControl().disable();
-		httpSecurity.cors() // ovo moze zapravo sve u istoj liniji
-							// ako ne napisemo verujemo samo sebi, ako stoji cor moramo imati @bean ovaj
-							// dole
+		httpSecurity.cors() 
 				.and().csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		/*
-		 * .and() .authorizeRequests() .antMatchers(HttpMethod.POST,
-		 * "/api/korisnici/auth") .permitAll() // mogu svi
-		 * .antMatchers(HttpMethod.DELETE, "/api/filmovi") .hasAnyAuthority("ADMIN",
-		 * "USER") // samo admin ili user .anyRequest().authenticated();
-		 */ // hasAuthoriry ako imamo jednu rolu
+	
 
 		// Custom JWT based authentication
 		httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
@@ -75,8 +68,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		CorsConfiguration configuration = new CorsConfiguration();
 		configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "DELETE", "PUT"));
-		configuration.setAllowedHeaders(Arrays.asList("*")); // ovo se stavi zbog corsa // kad ne radi dodati zvezdu
-
+		configuration.setAllowedHeaders(Arrays.asList("*")); 
+		
 		// allow Authorization header
 		configuration.setAllowCredentials(true);
 
